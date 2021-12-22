@@ -31,4 +31,13 @@ export class CoursesSevicesService {
   getRegisteredLearners(): Observable<Learner[]> {
     return this._http.get<Learner[]>(this.learners_url);
   }
+
+  addLearner(learner:Learner): Observable<void>{
+    return this._http.post<void>(this.learners_url, learner, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    })
+
+  }
 }
