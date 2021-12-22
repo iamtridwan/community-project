@@ -10,7 +10,7 @@ import { Course } from '../models/course'
   providedIn: 'root',
 })
 export class CoursesSevicesService {
-  learners_url = '../assets/learners.json';
+  learners_url = '../assets/data/learners.json';
   id = 'yoKqVevIVmIHxgavgtaaNLb7qipHgPiOzUSL6fGJ';
   secret =
     '3dpCNmER5iBZmGZnWh6sBMpp3ANv0i9p9f0QsgQXCYxjkktPSLDKBNFTcWas9gHMWkHOQcnAExfjp9yOzyCjlfTKsDwwu60eGwnxWxGiuIJz31UZutths4tIXJUVc5l7';
