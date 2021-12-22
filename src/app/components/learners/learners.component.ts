@@ -29,6 +29,9 @@ userSetting: Learner = {
 
   onSubmit(){
    this.courseService.addLearner(this.userSetting)
+   this.name = ''
+   this.email = ''
+   this.url = ''
 
   }
 }
