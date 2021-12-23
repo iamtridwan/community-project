@@ -3,30 +3,59 @@
   <div class="course-cat">
     <h3>Here are available categories of courses</h3>
     <ul>
-      <li [routerLink]="['business']"  routerLinkActive="active" > Business</li>
+      <li [routerLink]="['business']" routerLinkActive="active">Business</li>
       <li [routerLink]="['photo']" routerLinkActive="active">Photography</li>
       <li [routerLink]="['design']" routerLinkActive="active">Design</li>
-      <li [routerLink]="['software']" routerLinkActive="active">IT & Software</li>
-      <li [routerLink]="['development']" routerLinkActive="active">Development</li>
+      <li [routerLink]="['software']" routerLinkActive="active">
+        IT & Software
+      </li>
+      <li [routerLink]="['development']" routerLinkActive="active">
+        Development
+      </li>
     </ul>
     <router-outlet></router-outlet>
   </div>
-  
 
+  <h2>Fill form below to register</h2>
   <form>
     <div class="form-group">
       <label for="name">Name<span>*</span></label>
-      <input type="text" name="name" [(ngModel)]="name"/>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="name"
+        required
+        #nameField="ngModel"
+      />
+      <p [hidden]="nameField.valid || nameField.untouched">Enter a name</p>
     </div>
     <div class="form-group">
       <label for="name">Email<span>*</span></label>
-      <input type="email" name = "email" [(ngModel)]="email"/>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        required
+        #emailField="ngModel"
+      />
+      <p [hidden]="emailField.valid || emailField.untouched">
+        Enter a valid email
+      </p>
     </div>
     <div class="form-group">
       <label for="name">Course Url<span>*</span></label>
-      <input type= "url" name= "courseUrl" [(ngModel)]="url"/>
+      <input
+        type="url"
+        name="courseUrl"
+        [(ngModel)]="url"
+        required
+        #courseField="ngModel"
+      />
+      <p [hidden]="courseField.valid || courseField.untouched">
+        Enter course url
+      </p>
     </div>
 
-    <input type="submit" value="Submit" (click)= "onSubmit()" />
+    <input type="submit" value="Submit" (click)="onSubmit()" />
   </form>
 </main>
