@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Learner } from 'src/app/models/learner';
 import { CoursesSevicesService } from 'src/app/core/courses-sevices.service';
+import { NgForm } from '@angular/forms';
+
+import { Router } from '@angular/router';
 
 
 
@@ -12,26 +15,25 @@ import { CoursesSevicesService } from 'src/app/core/courses-sevices.service';
 })
 export class LearnersComponent implements OnInit {
 
-  name = ''
-  email = ''
-  url = ''
+  formValid = false
 
 userSetting: Learner = {
-  name: this.name,
-  email: this.email ,
-  url: this.url
+  name: "",
+  email: "" ,
+  url: ""
 }
-  constructor(private courseService: CoursesSevicesService) {}
+  constructor(private router:Router) {}
 
   ngOnInit(): void {
   }
 
 
-  onSubmit(){
-   this.courseService.addLearner(this.userSetting)
-   this.name = ''
-   this.email = ''
-   this.url = ''
+  onSubmit(form: NgForm){
+  if(form.valid){
+    this.formValid = !this.formValid;
+    this.router.navigate(['/welcome'])
+  }
+  
 
   }
 }

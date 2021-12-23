@@ -17,28 +17,30 @@
   </div>
 
   <h2>Fill form below to register</h2>
-  <form>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="name">Name<span>*</span></label>
       <input
         type="text"
         name="name"
-        [(ngModel)]="name"
+        [(ngModel)]="userSetting.name"
         required
         #nameField="ngModel"
+        [class.field-error] = 'form.submitted && nameField.invalid'
       />
-      <p [hidden]="nameField.valid || nameField.untouched">Enter a name</p>
+      <p [hidden]="!form.submitted || nameField.valid">Enter a name</p>
     </div>
     <div class="form-group">
       <label for="name">Email<span>*</span></label>
       <input
         type="email"
         name="email"
-        [(ngModel)]="email"
+        [(ngModel)]="userSetting.email"
         required
         #emailField="ngModel"
+        [class.field-error] = 'form.submitted && emailField.invalid'
       />
-      <p [hidden]="emailField.valid || emailField.untouched">
+      <p [hidden]="!form.submitted || emailField.valid">
         Enter a valid email
       </p>
     </div>
@@ -47,15 +49,18 @@
       <input
         type="url"
         name="courseUrl"
-        [(ngModel)]="url"
+        [(ngModel)]="userSetting.url"
         required
         #courseField="ngModel"
+        [class.field-error] = 'form.submitted && courseField.invalid'
       />
-      <p [hidden]="courseField.valid || courseField.untouched">
+      <p [hidden]="!form.submitted || courseField.valid">
         Enter course url
       </p>
     </div>
 
-    <input type="submit" value="Submit" (click)="onSubmit()" />
+    <input type="submit" value="Submit" />
   </form>
+ 
+  <p [hidden]="!formValid">Your data has been submitted</p>
 </main>
