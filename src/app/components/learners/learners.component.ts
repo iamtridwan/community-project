@@ -5,35 +5,28 @@ import { NgForm } from '@angular/forms';
 
 import { Router } from '@angular/router';
 
-
-
-
 @Component({
   selector: 'cp-learners',
   templateUrl: './learners.component.html',
   styleUrls: ['./learners.component.scss'],
 })
 export class LearnersComponent implements OnInit {
+  formValid = false;
 
-  formValid = false
+  userSetting: Learner = {
+    name: '',
+    email: '',
+    url: '',
+  };
+  constructor(private router: Router, private courseService: CoursesSevicesService) {}
 
-userSetting: Learner = {
-  name: "",
-  email: "" ,
-  url: ""
-}
-  constructor(private router:Router) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-
-  onSubmit(form: NgForm){
-  if(form.valid){
-    this.formValid = !this.formValid;
-    this.router.navigate(['/welcome'])
-  }
-  
-
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      this.formValid = !this.formValid;
+      this.courseService.addLearner(this.userSetting)
+      this.router.navigate(['/welcome']);
+    }
   }
 }
