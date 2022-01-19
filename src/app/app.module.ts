@@ -25,6 +25,7 @@ import { SoftwareComponent } from './components/learners/software/software.compo
     DevComponent,
     DesignComponent,
     SoftwareComponent,
+  
    
   ],
   imports: [

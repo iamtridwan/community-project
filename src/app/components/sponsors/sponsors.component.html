@@ -15,7 +15,7 @@
         <li *ngFor="let learner of learners">
             <h4><span>Name:</span>{{learner.name}}</h4>
             <p><span>Email:</span>  {{learner.email}}</p>
-            <a href = "https://udemy.com/course" target="_blank">Gift Course</a>
+            <button (click) = "switchWindow(learner.url)">Gift Course</button>
         </li>
     </ul>
 </main>

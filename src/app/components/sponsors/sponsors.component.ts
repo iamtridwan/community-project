@@ -20,6 +20,11 @@ learners : Learner[] = []
     )
   }
 
+    switchWindow(url: string){
+      window.open(
+        `https://udemy.com/${url}`, '_blank'
+      )
+    }
   
 
 }
