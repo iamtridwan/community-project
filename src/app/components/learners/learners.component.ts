@@ -18,14 +18,20 @@ export class LearnersComponent implements OnInit {
     email: '',
     url: '',
   };
-  constructor(private router: Router, private courseService: CoursesSevicesService) {}
+  constructor(
+    private router: Router,
+    private courseService: CoursesSevicesService
+  ) {}
 
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
     if (form.valid) {
       this.formValid = !this.formValid;
-      this.courseService.addLearner(this.userSetting)
+      this.courseService.addLearner(this.userSetting).subscribe(
+        (res) => console.log(res),
+        (err) => console.log(err)
+      );
       this.router.navigate(['/welcome']);
     }
   }
