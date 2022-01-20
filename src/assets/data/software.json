@@ -5,9 +5,9 @@
     "image": "https://img-c.udemycdn.com/course/125_H/1122334_3363_4.jpg"
   },
   {
-    "title": "Programming 101",
-    "url": "/course/programming-101/",
-    "image": "https://img-b.udemycdn.com/course/125_H/956404_da00.jpg"
+    "title": "CompTIA A+ certification Course: CompTIA A 220-1001 220-1002",
+    "url": "/course/comptia-a-core-1-comptia-a-220-1001-course/",
+    "image": "https://img-c.udemycdn.com/course/125_H/4360792_b758_2.jpg"
   },
   {
     "title": "Amazon Web Services (AWS) - Zero to Hero",
@@ -18,5 +18,10 @@
     "title": "Introduction to Databases and SQL Querying",
     "url": "/course/introduction-to-databases-and-sql-querying/",
     "image": "https://img-c.udemycdn.com/course/125_H/552672_e2b6_5.jpg"
+  },
+  {
+    "title": "Microsoft Azure Administrator AZ-900 | With Lab Scenarios",
+    "url": "/course/cloud-fundamentals-microsoft-azure-for-beginners/",
+    "image": "https://img-c.udemycdn.com/course/125_H/3588336_4d9b_4.jpg"
   }
 ]
